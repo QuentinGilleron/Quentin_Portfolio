@@ -155,7 +155,7 @@ module.bundle.HMR_BUNDLE_ID = "a2a0349d4e262f69";
 import type {
   HMRAsset,
   HMRMessage,
-} from '@parcel/reporter-dev-server/src/HMRServer.js';
+} from '@parcel/reporter-dev-server/docs/HMRServer.js';
 interface ParcelRequire {
   (string): mixed;
   cache: {|[string]: ParcelModule|};
@@ -584,7 +584,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"dfBCx":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 var _utils = require("./utils");
 var _lenis = require("@studio-freight/lenis");
 var _lenisDefault = parcelHelpers.interopDefault(_lenis);
@@ -669,6 +669,6 @@ const scroll = ()=>{
     scroll();
 });
 
-},{"./utils":"72Dku","@studio-freight/lenis":"ggVJc","gsap":"fPSuC","gsap/ScrollTrigger":"7wnFk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["g5Kne","dfBCx"], "dfBCx", "parcelRequiree63f")
+},{"./utils":"72Dku","@studio-freight/lenis":"ggVJc","gsap":"fPSuC","gsap/ScrollTrigger":"7wnFk","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}]},["g5Kne","dfBCx"], "dfBCx", "parcelRequiree63f")
 
 //# sourceMappingURL=index5.4e262f69.js.map

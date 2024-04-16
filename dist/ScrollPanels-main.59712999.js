@@ -155,7 +155,7 @@ module.bundle.HMR_BUNDLE_ID = "7055c94b59712999";
 import type {
   HMRAsset,
   HMRMessage,
-} from '@parcel/reporter-dev-server/src/HMRServer.js';
+} from '@parcel/reporter-dev-server/docs/HMRServer.js';
 interface ParcelRequire {
   (string): mixed;
   cache: {|[string]: ParcelModule|};

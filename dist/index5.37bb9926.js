@@ -155,7 +155,7 @@ module.bundle.HMR_BUNDLE_ID = "4c8a0e5337bb9926";
 import type {
   HMRAsset,
   HMRMessage,
-} from '@parcel/reporter-dev-server/src/HMRServer.js';
+} from '@parcel/reporter-dev-server/docs/HMRServer.js';
 interface ParcelRequire {
   (string): mixed;
   cache: {|[string]: ParcelModule|};
@@ -584,7 +584,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"72Dku":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "preloadImages", ()=>preloadImages);
 parcelHelpers.export(exports, "map", ()=>map);
@@ -659,7 +659,7 @@ const imagesLoaded = require("469e3acfa4a2d33e");
     return Math.hypot(elCenter.x - wincenter.x, elCenter.y - wincenter.y);
 };
 
-},{"469e3acfa4a2d33e":"aYzyZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aYzyZ":[function(require,module,exports) {
+},{"469e3acfa4a2d33e":"aYzyZ","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"aYzyZ":[function(require,module,exports) {
 /*!
  * imagesLoaded v5.0.0
  * JavaScript is all like "You images are done yet or what?"
@@ -1033,7 +1033,7 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"ggVJc":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>c);
 var _tinyEmitter = require("tiny-emitter");
@@ -1237,7 +1237,7 @@ var l = [
     ]), l;
 }((0, _tinyEmitter.TinyEmitter));
 
-},{"tiny-emitter":"2GwCf","virtual-scroll":"36ZkR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2GwCf":[function(require,module,exports) {
+},{"tiny-emitter":"2GwCf","virtual-scroll":"36ZkR","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"2GwCf":[function(require,module,exports) {
 function E() {
 // Keep this empty so it's easier to inherit from
 // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
@@ -1439,7 +1439,7 @@ module.exports.TinyEmitter = E;
 });
 
 },{}],"fPSuC":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gsap", ()=>gsapWithCSS);
 parcelHelpers.export(exports, "default", ()=>gsapWithCSS);
@@ -1471,8 +1471,8 @@ var _csspluginJs = require("./CSSPlugin.js");
 var gsapWithCSS = (0, _gsapCoreJs.gsap).registerPlugin((0, _csspluginJs.CSSPlugin)) || (0, _gsapCoreJs.gsap), // to protect from tree shaking
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
-},{"./gsap-core.js":"05eeC","./CSSPlugin.js":"l02JQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"05eeC":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+},{"./gsap-core.js":"05eeC","./CSSPlugin.js":"l02JQ","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"05eeC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "GSCache", ()=>GSCache);
 parcelHelpers.export(exports, "Animation", ()=>Animation);
@@ -4495,7 +4495,7 @@ _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0, Power1 = _easeMap.Power1, Power2 = _easeMap.Power2, Power3 = _easeMap.Power3, Power4 = _easeMap.Power4, Linear = _easeMap.Linear, Quad = _easeMap.Quad, Cubic = _easeMap.Cubic, Quart = _easeMap.Quart, Quint = _easeMap.Quint, Strong = _easeMap.Strong, Elastic = _easeMap.Elastic, Back = _easeMap.Back, SteppedEase = _easeMap.SteppedEase, Bounce = _easeMap.Bounce, Sine = _easeMap.Sine, Expo = _easeMap.Expo, Circ = _easeMap.Circ;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l02JQ":[function(require,module,exports) {
+},{"@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"l02JQ":[function(require,module,exports) {
 /*!
  * CSSPlugin 3.12.5
  * https://gsap.com
@@ -4504,7 +4504,7 @@ var Power0 = _easeMap.Power0, Power1 = _easeMap.Power1, Power2 = _easeMap.Power2
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
-*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CSSPlugin", ()=>CSSPlugin);
 parcelHelpers.export(exports, "default", ()=>CSSPlugin);
@@ -5462,7 +5462,7 @@ var CSSPlugin = {
 });
 (0, _gsapCoreJs.gsap).registerPlugin(CSSPlugin);
 
-},{"./gsap-core.js":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7wnFk":[function(require,module,exports) {
+},{"./gsap-core.js":"05eeC","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"7wnFk":[function(require,module,exports) {
 /*!
  * ScrollTrigger 3.12.5
  * https://gsap.com
@@ -5471,7 +5471,7 @@ var CSSPlugin = {
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
-*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ScrollTrigger", ()=>ScrollTrigger);
 parcelHelpers.export(exports, "default", ()=>ScrollTrigger);
@@ -7229,8 +7229,8 @@ ScrollTrigger.core = {
 };
 _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
-},{"./Observer.js":"aAWxM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aAWxM":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+},{"./Observer.js":"aAWxM","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"aAWxM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Observer", ()=>Observer);
 parcelHelpers.export(exports, "default", ()=>Observer);
@@ -7686,6 +7686,6 @@ Observer.getById = function(id) {
 };
 _getGSAP() && gsap.registerPlugin(Observer);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["fEYIp"], null, "parcelRequiree63f")
+},{"@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}]},["fEYIp"], null, "parcelRequiree63f")
 
 //# sourceMappingURL=index5.37bb9926.js.map

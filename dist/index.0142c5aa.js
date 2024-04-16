@@ -142,20 +142,20 @@
       this[globalName] = mainExports;
     }
   }
-})({"fEYIp":[function(require,module,exports) {
+})({"b3MAz":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 var HMR_USE_SSE = false;
-module.bundle.HMR_BUNDLE_ID = "4c8a0e5337bb9926";
+module.bundle.HMR_BUNDLE_ID = "bc963d0e0142c5aa";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, HMR_USE_SSE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
   HMRAsset,
   HMRMessage,
-} from '@parcel/reporter-dev-server/docs/HMRServer.js';
+} from '@parcel/reporter-dev-server/src/HMRServer.js';
 interface ParcelRequire {
   (string): mixed;
   cache: {|[string]: ParcelModule|};
@@ -583,14 +583,90 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"72Dku":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
+},{}],"2c1Ma":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _utils = require("./utils");
+var _lenis = require("@studio-freight/lenis");
+var _lenisDefault = parcelHelpers.interopDefault(_lenis);
+var _gsap = require("gsap");
+var _scrollTrigger = require("gsap/ScrollTrigger");
+(0, _gsap.gsap).registerPlugin((0, _scrollTrigger.ScrollTrigger));
+const DOM = {
+    sections: {
+        columns: document.querySelector(".section--columns"),
+        showcase: document.querySelector(".section--showcase")
+    },
+    columns: document.querySelectorAll(".section--columns > .columns"),
+    columnWraps: document.querySelectorAll(".section--columns .column-wrap"),
+    itemsWrappers: document.querySelectorAll(".section--columns .column-wrap .column"),
+    items: document.querySelectorAll(".section--columns .column__item"),
+    images: document.querySelectorAll(".section--columns .column__item-img")
+};
+// Lenis smooth scrolling
+let lenis;
+// Initialize Lenis smooth scrolling
+const initSmoothScrolling = ()=>{
+    lenis = new (0, _lenisDefault.default)({
+        lerp: 0.2,
+        smooth: true
+    });
+    const scrollFn = (time)=>{
+        lenis.raf(time);
+        requestAnimationFrame(scrollFn);
+    };
+    requestAnimationFrame(scrollFn);
+};
+// GSAP Scroll Triggers
+const scroll = ()=>{
+    (0, _gsap.gsap).timeline({
+        scrollTrigger: {
+            start: 0,
+            end: "max",
+            scrub: true
+        }
+    }).addLabel("start", 0).to(DOM.sections.columns, {
+        ease: "none",
+        startAt: {
+            scale: 1.1
+        },
+        scale: 1
+    }, "start").to(DOM.sections.columns, {
+        scrollTrigger: {
+            trigger: DOM.sections.showcase,
+            start: 0,
+            end: "top top",
+            scrub: true
+        },
+        ease: "power4.inOut",
+        startAt: {
+            opacity: 0.2
+        },
+        opacity: 1,
+        // repeat once (go back to "startAt" values)
+        yoyo: true,
+        repeat: 1
+    }, "start").to(DOM.columnWraps, {
+        ease: "none",
+        yPercent: (pos)=>pos % 2 ? 3 : -3
+    }, "start");
+};
+// Preload images
+(0, _utils.preloadImages)(".column__item-img").then(()=>{
+    document.body.classList.remove("loading");
+    // Lenis (smooth scrolling)
+    initSmoothScrolling();
+    // GSAP Scroll Triggers
+    scroll();
+});
+
+},{"./utils":"4FLwd","@studio-freight/lenis":"ggVJc","gsap":"fPSuC","gsap/ScrollTrigger":"7wnFk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4FLwd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "preloadImages", ()=>preloadImages);
 parcelHelpers.export(exports, "map", ()=>map);
 parcelHelpers.export(exports, "getTranslationDistance", ()=>getTranslationDistance);
 parcelHelpers.export(exports, "getDistanceToCenter", ()=>getDistanceToCenter);
-const imagesLoaded = require("469e3acfa4a2d33e");
+const imagesLoaded = require("e1779ecb56032126");
 /**
  * Preload images
  * @param {String} selector - Selector/scope from where images need to be preloaded. Default is 'img'
@@ -659,7 +735,7 @@ const imagesLoaded = require("469e3acfa4a2d33e");
     return Math.hypot(elCenter.x - wincenter.x, elCenter.y - wincenter.y);
 };
 
-},{"469e3acfa4a2d33e":"aYzyZ","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"aYzyZ":[function(require,module,exports) {
+},{"e1779ecb56032126":"aYzyZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aYzyZ":[function(require,module,exports) {
 /*!
  * imagesLoaded v5.0.0
  * JavaScript is all like "You images are done yet or what?"
@@ -1033,7 +1109,7 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"ggVJc":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>c);
 var _tinyEmitter = require("tiny-emitter");
@@ -1237,7 +1313,7 @@ var l = [
     ]), l;
 }((0, _tinyEmitter.TinyEmitter));
 
-},{"tiny-emitter":"2GwCf","virtual-scroll":"36ZkR","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"2GwCf":[function(require,module,exports) {
+},{"tiny-emitter":"2GwCf","virtual-scroll":"36ZkR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2GwCf":[function(require,module,exports) {
 function E() {
 // Keep this empty so it's easier to inherit from
 // (via https://github.com/lipsmack from https://github.com/scottcorgan/tiny-emitter/issues/3)
@@ -1439,7 +1515,7 @@ module.exports.TinyEmitter = E;
 });
 
 },{}],"fPSuC":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "gsap", ()=>gsapWithCSS);
 parcelHelpers.export(exports, "default", ()=>gsapWithCSS);
@@ -1471,8 +1547,8 @@ var _csspluginJs = require("./CSSPlugin.js");
 var gsapWithCSS = (0, _gsapCoreJs.gsap).registerPlugin((0, _csspluginJs.CSSPlugin)) || (0, _gsapCoreJs.gsap), // to protect from tree shaking
 TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
-},{"./gsap-core.js":"05eeC","./CSSPlugin.js":"l02JQ","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"05eeC":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
+},{"./gsap-core.js":"05eeC","./CSSPlugin.js":"l02JQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"05eeC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "GSCache", ()=>GSCache);
 parcelHelpers.export(exports, "Animation", ()=>Animation);
@@ -4495,7 +4571,7 @@ _coreReady = 1;
 _windowExists() && _wake();
 var Power0 = _easeMap.Power0, Power1 = _easeMap.Power1, Power2 = _easeMap.Power2, Power3 = _easeMap.Power3, Power4 = _easeMap.Power4, Linear = _easeMap.Linear, Quad = _easeMap.Quad, Cubic = _easeMap.Cubic, Quart = _easeMap.Quart, Quint = _easeMap.Quint, Strong = _easeMap.Strong, Elastic = _easeMap.Elastic, Back = _easeMap.Back, SteppedEase = _easeMap.SteppedEase, Bounce = _easeMap.Bounce, Sine = _easeMap.Sine, Expo = _easeMap.Expo, Circ = _easeMap.Circ;
 
-},{"@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"l02JQ":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l02JQ":[function(require,module,exports) {
 /*!
  * CSSPlugin 3.12.5
  * https://gsap.com
@@ -4504,7 +4580,7 @@ var Power0 = _easeMap.Power0, Power1 = _easeMap.Power1, Power2 = _easeMap.Power2
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
-*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
+*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "CSSPlugin", ()=>CSSPlugin);
 parcelHelpers.export(exports, "default", ()=>CSSPlugin);
@@ -5462,7 +5538,7 @@ var CSSPlugin = {
 });
 (0, _gsapCoreJs.gsap).registerPlugin(CSSPlugin);
 
-},{"./gsap-core.js":"05eeC","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"7wnFk":[function(require,module,exports) {
+},{"./gsap-core.js":"05eeC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7wnFk":[function(require,module,exports) {
 /*!
  * ScrollTrigger 3.12.5
  * https://gsap.com
@@ -5471,7 +5547,7 @@ var CSSPlugin = {
  * Subject to the terms at https://gsap.com/standard-license or for
  * Club GSAP members, the agreement issued with that membership.
  * @author: Jack Doyle, jack@greensock.com
-*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
+*/ /* eslint-disable */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ScrollTrigger", ()=>ScrollTrigger);
 parcelHelpers.export(exports, "default", ()=>ScrollTrigger);
@@ -7229,8 +7305,8 @@ ScrollTrigger.core = {
 };
 _getGSAP() && gsap.registerPlugin(ScrollTrigger);
 
-},{"./Observer.js":"aAWxM","@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}],"aAWxM":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/docs/esmodule-helpers.js");
+},{"./Observer.js":"aAWxM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aAWxM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Observer", ()=>Observer);
 parcelHelpers.export(exports, "default", ()=>Observer);
@@ -7686,6 +7762,6 @@ Observer.getById = function(id) {
 };
 _getGSAP() && gsap.registerPlugin(Observer);
 
-},{"@parcel/transformer-js/docs/esmodule-helpers.js":"gkKU3"}]},["fEYIp"], null, "parcelRequiree63f")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["b3MAz","2c1Ma"], "2c1Ma", "parcelRequiree63f")
 
-//# sourceMappingURL=index.37bb9926.js.map
+//# sourceMappingURL=index.0142c5aa.js.map
