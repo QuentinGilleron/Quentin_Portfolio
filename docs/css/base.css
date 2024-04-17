@@ -443,6 +443,7 @@ a:focus-visible {
 	height: 100px;
 	background-size: cover;
 	background-position: 50% 50%;
+	border: 2mm ridge var(--color-bg);
 }
 
 .row__content-imgwrap:nth-child(even) .row__content-img{
@@ -496,4 +497,39 @@ a:focus-visible {
 		justify-self: end;
 		grid-column: revert;
 	}
+}
+
+.footer {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    padding: 4rem;
+    text-align: center;
+	text-transform: none;
+	font-family: Georgia, serif;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.footer__logo {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.footer__text {
+    font-size: 1.2rem;
+}
+
+.footer__text a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+.footer__text a:hover {
+    color: var(--color-link-hover);
 }
