@@ -7,7 +7,7 @@
     "start": "parcel docs/index.html --open",
     "clean": "rm -rf dist/*",
     "build:parcel": "parcel build docs/index.html --no-content-hash --no-source-maps --public-url ./",
-    "build": "npm run clean && npm run build:parcel"
+    "build": "npm run build:parcel"
   },
   "repository": {
     "type": "git",
